@@ -28,6 +28,8 @@ jobs:
         run: |
           # pip更新
           python -m pip install --upgrade pip
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           # 必要なパッケージインストール
           pip install line-bot-sdk
       - name: Run script
