@@ -12,7 +12,8 @@ file2 = pd.read_csv(filepath_or_buffer="sample_data.csv", encoding="ms932", sep=
 CHANNEL_ACCESS_TOKEN = info['CHANNEL_ACCESS_TOKEN']
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 
-send_text = file2.values[random.randint(0, len(file2)-1),random.randint(1,len(file2.columns)-1)]
+while send_text == "blank" :
+    send_text = file2.values[random.randint(0, len(file2)-1),random.randint(1,len(file2.columns)-1)]
 
 def main():
     USER_ID = info['USER_ID']
